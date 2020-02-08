@@ -1,0 +1,31 @@
+<div class="alert alert-info" role="alert">
+  Película seleccionada: <strong>{{film.title + ', ' + film.release_date}}</strong>
+</div>
+
+<h5>Lista de naves</h5>
+
+<div class="table-responsive">
+  <table class="table table-sm table-striped table-bordered table-hover">
+    <thead class="text-center">
+      <tr>
+        <th>Nombre</th>
+        <th>Modelo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-container *ngFor="let starship of starships; let i = index;">
+        <tr>
+          <td>{{starship.name}}</td>
+          <td>{{starship.model}}</td>
+          <td align="center">
+            <a class="btn btn-outline-primary btn-sm" [routerLink] = "['/film/starships/info/',starship.id]" title="Ver">
+              <i class="fa fa-eye"></i>
+            </a>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
