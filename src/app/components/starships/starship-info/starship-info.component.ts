@@ -33,9 +33,7 @@ export class StarshipInfoComponent implements OnInit {
         this.starship = response;
         this.starship.id = this.extractIdURL();
 
-        setTimeout(() => {
-          this.spinner.hide();
-        }, 5000);
+        this.spinner.hide();
       },
       error => {
         swal.fire({

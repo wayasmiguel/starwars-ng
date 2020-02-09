@@ -1,3 +1,5 @@
+<h5>Mi lista de naves</h5>
+
 <div class="table-responsive">
   <table class="table table-sm table-striped table-bordered table-hover">
     <thead class="text-center">
@@ -9,18 +11,17 @@
     </thead>
 
     <tbody>
-      <!-- <ng-container *ngFor="let film of films; let i = index;">
+      <ng-container *ngFor="let starship of starships; let i = index;">
         <tr>
-          <td align="center">{{film.episode_id}}</td>
-          <td>{{film.title}}</td>
-          <td align="center">{{film.release_date}}</td>
+          <td>{{starship.name}}</td>
+          <td>{{starship.model}}</td>
           <td align="center">
-            <a class="btn btn-outline-primary btn-sm" [routerLink] = "['/film/'+ extractIdURL(i) +'/starships/list']" title="Ver">
+            <a class="btn btn-outline-primary btn-sm" [routerLink] = "['/my-starships/info/', starship.id_starship]" title="Ver">
               <i class="fa fa-eye"></i>
             </a>
           </td>
         </tr>
-      </ng-container> -->
+      </ng-container>
     </tbody>
   </table>
 </div>

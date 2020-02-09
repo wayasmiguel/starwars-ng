@@ -28,9 +28,7 @@ export class FilmsComponent implements OnInit {
         //console.log(response.results);
         this.films = response.results.sort(this.dynamicSort('episode_id'));
 
-        setTimeout(() => {
-          this.spinner.hide();
-        }, 5000);
+        this.spinner.hide();
       },
       error => {
         swal.fire({

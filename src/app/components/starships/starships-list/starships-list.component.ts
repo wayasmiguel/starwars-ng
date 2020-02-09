@@ -34,9 +34,7 @@ export class StarshipsListComponent implements OnInit {
         this.film = response;
         this.getSS();
 
-        setTimeout(() => {
-          this.spinner.hide();
-        }, 5000);
+        this.spinner.hide();
       },
       error => {
         swal.fire({

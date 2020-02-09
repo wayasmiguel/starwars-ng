@@ -5,82 +5,64 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class SwapiService{
 
-  public url = "https://swapi.co/api/";
+  swapi = "https://swapi.co/api/";
+  mongoapi = "http://localhost:3900/api/starships";
 
   constructor(
     private httpClient : HttpClient
   ){}
 
+  //Swapi
+
   getFilms() : Observable<any>{
 
-    return this.httpClient.get(this.url + 'films');
+    return this.httpClient.get(this.swapi + 'films');
 
   }
 
   getFilmInfo(id) : Observable<any>{
 
-    return this.httpClient.get(this.url + 'films/' + id);
+    return this.httpClient.get(this.swapi + 'films/' + id);
 
   }
 
   getStarshipInfo(id) : Observable<any>{
 
-    return this.httpClient.get(this.url + 'starships/' + id);
+    return this.httpClient.get(this.swapi + 'starships/' + id);
 
   }
 
-  // getSurveys() : Observable<any>{
+  //My Starships - MongoDB
+
+  getMyStarships() : Observable<any>{
+
+    return this.httpClient.get(this.mongoapi);
+
+  }
+
+  storeStarship(starship)  : Observable<any>{
+
+    return this.httpClient.post(this.mongoapi, starship);
+
+  }
   //
-  //   return this._http.get(this.url + 'encuestas');
+  // showStarship(id_starship) : Observable<any>{
   //
-  // }
-  //
-  // storeSurvey(survey) : Observable<any>{
-  //
-  //   return this._http.post(this.url + 'encuestas', {survey : survey});
-  //
-  // }
-  //
-  // showSurvey(id) : Observable<any>{
-  //
-  //   return this._http.get(this.url + 'encuestas/'+id);
-  //
-  // }
-  //
-  // updateSurvey(survey) : Observable<any>{
-  //
-  //   return this._http.put(this.url + 'encuestas/'+survey.id, {survey : survey});
+  //   return this.httpClient.get(this.mongo + id_starship);
   //
   // }
   //
-  // updStatusSurvey(id,status) : Observable<any>{
   //
-  //   return this._http.get(this.url + 'encuestas/upd_status/'+id+'/'+status);
+  // updateStarship(survey) : Observable<any>{
   //
-  // }
-  //
-  // delSurvey(id) : Observable<any>{
-  //
-  //   return this._http.delete(this.url + 'encuestas/'+id);
+  //   return this.httpClient.put(this.mongo + starship.id_starship, {starship : starship});
   //
   // }
   //
-  // storeQuestions(survey) : Observable<any>{
+  // destroyStarship(id_starship) : Observable<any>{
   //
-  //   return this._http.post(this.url + 'encuesta/store-questions', {survey : survey});
+  //   return this.httpClient.delete(this.url + id_starship);
   //
-  // }
-  //
-  // delQuestion(id) : Observable<any>{
-  //
-  //   return this._http.get(this.url + 'encuesta/preguntas/delete/'+id);
-  //
-  // }
-  //
-  // storeQuestionsResults(survey) : Observable<any>{
-  //
-  //   return this._http.post(this.url + 'encuestas/make/store', {survey});
-  //
-  // }
+  //}
 
 }
