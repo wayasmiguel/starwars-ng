@@ -1,1 +1,46 @@
-<p>my-starship-info works!</p>
+<div class="alert alert-info" role="alert">
+  Nave seleccionada: <strong>{{starship.name}}</strong>
+</div>
+
+<div class="card">
+  <h5 class="card-header">Especificaciones
+    <button class="btn btn-danger btn-sm float-right" (click)="deleteSS(starship._id)" title="Eliminar">
+      <i class="fa fa-trash"></i> Eliminar
+    </button>
+
+    <a class="btn btn-warning btn-sm float-right mr-2" [routerLink] = "['/my-starships/edit/', starship._id]" title="Editar">
+      <i class="fa fa-pencil"></i> Editar
+    </a>
+  </h5>
+
+  <div class="card-body">
+
+    <h5 class="card-title">Modelo</h5>
+    <p class="card-text">{{starship.model}}</p>
+
+    <h5 class="card-title">Tamaño</h5>
+    <p class="card-text">{{starship.length}}</p>
+
+    <h5 class="card-title">Capacidad de carga</h5>
+    <p class="card-text">{{starship.cargo_capacity}}</p>
+
+    <h5 class="card-title">Pasajeros</h5>
+    <p class="card-text">{{starship.passengers}}</p>
+
+    <h5 class="card-title">Velcidad máxima de atmósfera</h5>
+    <p class="card-text">{{starship.max_atmosphering_speed}}</p>
+
+    <h5 class="card-title">Calificación de hiperimpulsor</h5>
+    <p class="card-text">{{starship.hyperdrive_rating}}</p>
+
+    <h5 class="card-title">Fabricante</h5>
+    <p class="card-text">{{starship.manufacturer}}</p>
+
+    <h5 class="card-title">Clase</h5>
+    <p class="card-text">{{starship.starship_class}}</p>
+
+    <h5 class="card-title">Costo en créditos</h5>
+    <p class="card-text">{{starship.cost_in_credits}}</p>
+
+  </div>
+</div>

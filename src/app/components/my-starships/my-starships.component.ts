@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SwapiService } from '../../services/swapi.service';
+import { MongoapiService } from '../../services/mongoapi.service';
 import swal from'sweetalert2';
 import { NgxSpinnerService } from "ngx-spinner";
 
@@ -7,14 +7,14 @@ import { NgxSpinnerService } from "ngx-spinner";
   selector: 'app-my-starships',
   templateUrl: './my-starships.component.html',
   styleUrls: ['./my-starships.component.scss'],
-  providers: [SwapiService]
+  providers: [MongoapiService]
 })
 export class MyStarshipsComponent implements OnInit {
 
   starships = <any>[];
 
   constructor(
-    private swapiService: SwapiService,
+    private mongoapiService: MongoapiService,
     private spinner: NgxSpinnerService
   ){}
 
@@ -22,24 +22,32 @@ export class MyStarshipsComponent implements OnInit {
 
     this.spinner.show();
 
-    this.swapiService.getMyStarships().subscribe(
+    this.mongoapiService.getMyStarships().subscribe(
       response => {
         //console.log(response);
 
-        if(response.status == 'success'){
-          this.starships = response.starships;
-        }
+        this.spinner.hide();
 
-        if(response.status == 'error'){
+        if(response.error){
           swal.fire({
             icon: 'error',
-            title: 'Ha ocurrido un error al obtener los datos desde Mongo',
+            title: response.error,
             confirmButtonText: 'Aceptar'
           });
         }
+        else{
+          this.starships = response.starships;
+        }
 
-
+      },
+      error => {
         this.spinner.hide();
+
+        swal.fire({
+          icon: 'error',
+          title: 'Ha ocurrido un error al obtener los datos desde Mongo',
+          confirmButtonText: 'Aceptar'
+        });
       }
     );
 

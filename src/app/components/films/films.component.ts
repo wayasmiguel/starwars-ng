@@ -31,9 +31,11 @@ export class FilmsComponent implements OnInit {
         this.spinner.hide();
       },
       error => {
+        this.spinner.hide();
+
         swal.fire({
           icon: 'error',
-          title: 'Ha ocurrido un error al obtener los datos desde Swapi',
+          title: 'Ha ocurrido un error al obtener los datos desde Swapi!',
           confirmButtonText: 'Aceptar'
         });
       }
