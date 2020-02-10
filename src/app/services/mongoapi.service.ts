@@ -8,7 +8,7 @@ export class MongoapiService{
   localhost = "http://localhost:3900";
   production = "https://wayasmiguel.github.io/starwars-backend/";
 
-  mongoapi = production + "/api/starships/";
+  mongoapi = this.production + "/api/starships/";
 
   constructor(
     private httpClient : HttpClient
