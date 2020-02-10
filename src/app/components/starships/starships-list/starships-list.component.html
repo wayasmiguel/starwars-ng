@@ -26,6 +26,9 @@
           </td>
         </tr>
       </ng-container>
+      <tr *ngIf="starships.length == 0">
+        <td colspan="4" class="text-center">No hay registros que mostrar</td>
+      </tr>
     </tbody>
   </table>
 </div>

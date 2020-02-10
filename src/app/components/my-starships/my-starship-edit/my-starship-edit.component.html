@@ -27,7 +27,7 @@
 
       <div class="form-group">
         <label class="font-weight-bold">Tamaño</label>
-        <input type="number" class="form-control" formControlName="length" [ngClass]="{ 'is-invalid': submitted && f.length.errors }">
+        <input type="text" class="form-control" formControlName="length" [ngClass]="{ 'is-invalid': submitted && f.length.errors }">
         <div *ngIf="submitted && starshipForm.controls.length.errors">
             <small *ngIf="starshipForm.controls.length.errors.required" class="form-text text-danger">El campo <strong>tamaño</strong> es requerido.</small>
         </div>
@@ -35,7 +35,7 @@
 
       <div class="form-group">
         <label class="font-weight-bold">Capacidad de carga</label>
-        <input type="number" class="form-control" formControlName="cargo_capacity" [ngClass]="{ 'is-invalid': submitted && f.cargo_capacity.errors }">
+        <input type="text" class="form-control" formControlName="cargo_capacity" [ngClass]="{ 'is-invalid': submitted && f.cargo_capacity.errors }">
         <div *ngIf="submitted && starshipForm.controls.cargo_capacity.errors">
             <small *ngIf="starshipForm.controls.cargo_capacity.errors.required" class="form-text text-danger">El campo <strong>capacidad de carga</strong> es requerido.</small>
         </div>
@@ -43,7 +43,7 @@
 
       <div class="form-group">
         <label class="font-weight-bold">Pasajeros</label>
-        <input type="number" class="form-control" formControlName="passengers" [ngClass]="{ 'is-invalid': submitted && f.passengers.errors }">
+        <input type="text" class="form-control" formControlName="passengers" [ngClass]="{ 'is-invalid': submitted && f.passengers.errors }">
         <div *ngIf="submitted && starshipForm.controls.passengers.errors">
             <small *ngIf="starshipForm.controls.passengers.errors.required" class="form-text text-danger">El campo <strong>pasajeros</strong> es requerido.</small>
         </div>
@@ -51,7 +51,7 @@
 
       <div class="form-group">
         <label class="font-weight-bold">Velcidad máxima de atmósfera</label>
-        <input type="number" class="form-control" formControlName="max_atmosphering_speed" [ngClass]="{ 'is-invalid': submitted && f.max_atmosphering_speed.errors }">
+        <input type="text" class="form-control" formControlName="max_atmosphering_speed" [ngClass]="{ 'is-invalid': submitted && f.max_atmosphering_speed.errors }">
         <div *ngIf="submitted && starshipForm.controls.max_atmosphering_speed.errors">
             <small *ngIf="starshipForm.controls.max_atmosphering_speed.errors.required" class="form-text text-danger">El campo <strong>velocidad máxima de atmósfera</strong> es requerido.</small>
         </div>
@@ -59,7 +59,7 @@
 
       <div class="form-group">
         <label class="font-weight-bold">Calificación de hiperimpulsor</label>
-        <input type="number" class="form-control" formControlName="hyperdrive_rating" [ngClass]="{ 'is-invalid': submitted && f.hyperdrive_rating.errors }">
+        <input type="text" class="form-control" formControlName="hyperdrive_rating" [ngClass]="{ 'is-invalid': submitted && f.hyperdrive_rating.errors }">
         <div *ngIf="submitted && starshipForm.controls.hyperdrive_rating.errors">
             <small *ngIf="starshipForm.controls.hyperdrive_rating.errors.required" class="form-text text-danger">El campo <strong>calificación de hiperimpulsor</strong> es requerido.</small>
         </div>
@@ -83,7 +83,7 @@
 
       <div class="form-group">
         <label class="font-weight-bold">Costo en créditos</label>
-        <input type="number" class="form-control" formControlName="cost_in_credits" [ngClass]="{ 'is-invalid': submitted && f.cost_in_credits.errors }">
+        <input type="text" class="form-control" formControlName="cost_in_credits" [ngClass]="{ 'is-invalid': submitted && f.cost_in_credits.errors }">
         <div *ngIf="submitted && starshipForm.controls.cost_in_credits.errors">
             <small *ngIf="starshipForm.controls.cost_in_credits.errors.required" class="form-text text-danger">El campo <strong>costo en créditos</strong> es requerido.</small>
         </div>

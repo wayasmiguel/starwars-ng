@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export class MongoapiService{
 
   localhost = "http://localhost:3900";
-  production = "https://wayasmiguel.github.io/starwars-backend/";
+  production = "https://starwars-node-backend.herokuapp.com";
 
   mongoapi = this.production + "/api/starships/";
 
