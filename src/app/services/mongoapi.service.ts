@@ -5,7 +5,10 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class MongoapiService{
 
-  mongoapi = "http://localhost:3900/api/starships/";
+  localhost = "http://localhost:3900";
+  production = "https://wayasmiguel.github.io/starwars-backend/";
+
+  mongoapi = production + "/api/starships/";
 
   constructor(
     private httpClient : HttpClient
